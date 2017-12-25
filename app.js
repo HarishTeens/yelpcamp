@@ -20,9 +20,7 @@ express.set("view engine","ejs");
 express.use(bodyparser.urlencoded({extended:true}));
 mongoose.Promise = global.Promise;
 //
-console.log(process.env.DATABASEURL);
-mongoose.connect("mongodb://harish:harish@ds131697.mlab.com:31697/yelpcamp",{useMongoClient:true});
-// mongodb://Harish_Teens:H@rish16 @ds131697.mlab.com:31697/yelpcamp
+mongoose.connect(process.env.DATABASEURL,{useMongoClient:true});
 express.use(require("express").static("public"));
 express.use(methodOverride("_method"));
 express.use(flash());
