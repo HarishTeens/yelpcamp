@@ -20,7 +20,8 @@ express.set("view engine","ejs");
 express.use(bodyparser.urlencoded({extended:true}));
 mongoose.Promise = global.Promise;
 //
-mongoose.connect(process.env.DATABASEURL,{useMongoClient:true});
+console.log(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL);
 express.use(require("express").static("public"));
 express.use(methodOverride("_method"));
 express.use(flash());
