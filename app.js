@@ -20,8 +20,7 @@ express.set("view engine","ejs");
 express.use(bodyparser.urlencoded({extended:true}));
 mongoose.Promise = global.Promise;
 //
-var url=process.env.DATABASEURL||"mongodb://localhost/yelp_camp";
-mongoose.connect(process.env.DATABASEURL,{useMongoClient:true})
+mongoose.connect("mongodb://harish:harish@ds131697.mlab.com:31697/yelpcamp",{useMongoClient:true})
 express.use(require("express").static("public"));
 express.use(methodOverride("_method"));
 express.use(flash());
