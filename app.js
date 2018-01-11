@@ -29,7 +29,10 @@ express.use(flash());
 express.use(require("express-session")({
     secret:"All You want to do is stay a minute ",
     resave:false,
-    saveUninitialized:false
+    saveUninitialized:false,
+     cookie: {
+        expires:10000,
+        }
     
 }));
 express.use(passport.initialize());

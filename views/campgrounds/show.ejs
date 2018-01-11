@@ -1,3 +1,4 @@
+<% if(campground){ %>
 <% include ../partials/header %>
 <div class="container">
     <div class="row">
@@ -55,4 +56,8 @@
         </div>
     </div>
 </div>
-<% include ../partials/footer %> 
+<% include ../partials/footer %>
+
+<% }else{%>
+<h1>campground not found</h1>
+ <% }%>
