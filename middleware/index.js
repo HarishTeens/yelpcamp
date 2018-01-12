@@ -68,7 +68,12 @@ middlewareObj.isCommentAuthorised=function(req,res,next){
 
 middlewareObj.isLoggedIn=function(req,res,next){
     if(req.isAuthenticated())
-    next();
+    {
+        console.log(req.session);
+        next();
+       
+    }
+    
     else
     {
         req.flash("error","You must be logged in to do that!");

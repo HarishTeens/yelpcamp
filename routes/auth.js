@@ -39,6 +39,9 @@ router.post("/register",function(req, res) {
 
 //login form
 router.get("/login",function(req, res) {
+    req.session.regenerate(function(err) {
+  // will have a new session here
+})
     res.render("login");
 })
 //login
@@ -48,7 +51,7 @@ router.post("/login",passport.authenticate("local",{
     successFlash:"Successfully Logged in",
     failureFlash:"Incorrect username or password"
     }),function(req, res) {
-        
+        res.cookie('name','fuck');
 })
 
 //logout

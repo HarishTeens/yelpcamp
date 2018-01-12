@@ -9,7 +9,13 @@ router.get("/",function(req,res){
         if(err)
         console.log(err);
         else
-        res.render("campgrounds/index",{campgrounds:allcampgrounds});
+        {
+            req.session.regenerate(function(err) {
+  // will have a new session here
+})
+      res.render("campgrounds/index",{campgrounds:allcampgrounds});
+        }
+  
     })
 })
 

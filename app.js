@@ -9,6 +9,7 @@ var express       = require("express")(),
     passportlocalmongoose=require("passport-local-mongoose"),
     methodOverride=require("method-override"),
     flash         =require("connect-flash"),
+    cp=require("cookie-parser")
     seedDB        =require("./seeds");
     
 var commentRoutes   = require("./routes/comments"),
@@ -16,6 +17,7 @@ var commentRoutes   = require("./routes/comments"),
     campgroundRoutes= require("./routes/campgrounds");
 
 //seedDB();
+express.use(cp());
 express.set("view engine","ejs");
 express.use(bodyparser.urlencoded({extended:true}));
 mongoose.Promise = global.Promise;
@@ -31,8 +33,9 @@ express.use(require("express-session")({
     resave:false,
     saveUninitialized:false,
      cookie: {
-        expires:10000,
+        maxAge:60*1000
         }
+        
     
 }));
 express.use(passport.initialize());
@@ -47,6 +50,7 @@ express.use(function(req,res,next){
   res.locals.currentUser=req.user;  
   next();
 })
+
 //requiring routes
 express.use("/campgrounds/:id/comments",commentRoutes);
 express.use(authRoutes);
