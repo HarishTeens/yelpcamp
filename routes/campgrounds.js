@@ -1,4 +1,5 @@
 var express=require("express");
+var moment = require('moment');
 var middleware=require("../middleware");
 var router=express.Router();
 var campground=require("../modules/campgrounds");
@@ -47,7 +48,7 @@ router.get("/:id",function(req, res) {
         if(err)
         console.log(err);
         else
-        res.render("campgrounds/show",{campground:foundCampground});
+        res.render("campgrounds/show",{campground:foundCampground, moment});
     })
     
 })

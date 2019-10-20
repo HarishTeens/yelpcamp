@@ -37,7 +37,7 @@
                     <div class="col-md-12">
                         <strong><%=comment.author.username%></strong>
                         <span class="pull-right">
-                            10 days ago
+                            <%=moment(comment.createdAt).format( 'MMM-DD-YYYY')%>
                         </span>
                         <p>
                             <%=comment.text%> 
