@@ -37,7 +37,7 @@
                     <div class="col-md-12">
                         <strong><%=comment.author.username%></strong>
                         <span class="pull-right">
-                            <%=moment(comment.createdAt).format( 'MMM-DD-YYYY')%>
+                            <%=moment(moment(comment.createdAt).format( 'YYYYMMDD'), "YYYYMMDD").fromNow()%>
                         </span>
                         <p>
                             <%=comment.text%> 
