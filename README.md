@@ -1,6 +1,7 @@
 # yelpcamp
 
 ![](yelpcamphome.PNG)
+
 Yelpcamp is fully functional NodeJs web app
 
 This is a camping ground website which was actually developed during a code-along
@@ -14,7 +15,7 @@ With yelpcamp, one can create and view data related to botcamps you know, includ
 
 1. **Node.js** for running server-side JavaScript. You can find instructions on how to download and install Node.js for your computer [here](https://nodejs.org/en/download/)
 
-2. **MongoDB**(Community Edition preferrably) to store data. Instructions on downloading and installing MongoDB on your computer can be found [here](https://docs.mongodb.com/manual/installation/)
+2. **MongoDB** (Community Edition preferrably) to store data. Instructions on downloading and installing MongoDB on your computer can be found [here](https://docs.mongodb.com/manual/installation/)
 
 ### Installing
 
